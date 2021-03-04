@@ -1,72 +1,154 @@
+/* light mode color scheme */
+:root {
+    --primary-color: #302AE6;
+    --secondary-color: #536390;
+    --text-color: #424242;
+    --bg-color: #fff;
+    --heading-color: #292922;
+}
+/* dark mode color scheme */
+[data-theme="dark"] {
+    --primary-color: #9A97F3;
+    --secondary-color: #818cab;
+    --text-color: #e1e1ff;
+    --bg-color: #161625;
+    --heading-color: #818cab;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1;
   }
   
-  textarea{
+textarea{
     background: transparent;
     border: none;
     resize: none;
-    color: #000000;
-    border-left: 1px solid black;
+    color: var(--text-color);
+    border-left: 1px solid;
+    border-color: var(--heading-color);
     padding: 10px;
   }
   
-  .jumbotron {
+.jumbotron {
     text-align: center;
-    background-color: transparent;
-    color: black;
+    background-color:var(--bg-color);
+    color:var(--text-color);
     border-radius: 0;
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid;
+    border-color: var(--primary-color);
     padding: 5px;
   }
+
+/* stylings for the dark mode switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
   
-  .description{
+    em: {
+      margin-left: 10px;
+      font-size: 1rem;
+    }
+}
+  
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+  
+.theme-switch input {
+    display:none;
+}
+  
+.slider {
+    background-color:var(--secondary-color);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+  
+.slider:before {
+    background-color:var(--text-color);
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+  
+input:checked + .slider {
+    background-color:var(--heading-color);
+}
+  
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+  
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+  /* end styling for dark mode switch */
+  
+.description{
     white-space: pre-wrap;
-  }
+}
   
-  .time-block{
+.time-block{
     text-align: center;
     border-radius: 15px;
-  }
+}
   
-  .row {
+.row {
     white-space: pre-wrap;
     height: 80px;
-    border-top: 1px solid white;;
-  }
+    border-top: 1px solid;
+    border-color: var(--bg-color);
+}
   
-  .hour {
-    background-color: #ffffff;
-    color: #000000;
-    border-top: 1px dashed #000000;
-  }
+.hour {
+    background-color: var(--bg-color);
+    color: var(--heading-color);
+    border-top: 1px dashed;
+    border-color: var(--heading-color);
+}
   
-  .past {
+.past {
     background-color: #d3d3d3;
     color: white;
-  }
+}
   
-  .present {
+.present {
     background-color: #ff6961;
     color: white;
-  }
+}
   
-  .future {
+.future {
     background-color: #77dd77;
     color: white;
-  }
+}
   
-  .saveBtn {
+.saveBtn {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
     color: white;
-  }
+}
   
-  .saveBtn i:hover {
+.saveBtn i:hover {
     font-size: 20px;
     transition: all .3s ease-in-out;
-  }
+}
