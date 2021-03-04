@@ -1,5 +1,5 @@
 var currentDay;
-// constant for the dark mode/light mode switch
+// Constant for the dark mode/light mode switch
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
 // Retireves the current system time and date and sets the text of the p element with the id=currentDay to be the current system time and date
@@ -9,7 +9,7 @@ setInterval(function() {
 }, 1000);
 
 
-
+//Changes the webpages visual theme between dark and light mode
 function switchTheme(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
@@ -20,11 +20,5 @@ function switchTheme(e) {
         document.getElementById("switchText").textContent= "Toggle Dark Mode";
     }    
 }
-
-
-
-
-
-
 // Event listner for the dark mode/light mode toggle switch
 toggleSwitch.addEventListener('change', switchTheme, false);

@@ -19,17 +19,19 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1;
-  }
+    background-color: var(--bg-color);
+}
   
 textarea{
+    width:100%;
     background: transparent;
     border: none;
     resize: none;
     color: var(--text-color);
-    border-left: 1px solid;
-    border-color: var(--heading-color);
     padding: 10px;
-  }
+    text-align: left;
+    outline: none;
+}
   
 .jumbotron {
     text-align: center;
@@ -37,9 +39,9 @@ textarea{
     color:var(--text-color);
     border-radius: 0;
     border-bottom: 10px solid;
-    border-color: var(--primary-color);
+    border-color:var(--secondary-color);
     padding: 5px;
-  }
+}
 
 /* stylings for the dark mode switch */
 .theme-switch-wrapper {
@@ -101,7 +103,12 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
   /* end styling for dark mode switch */
-  
+
+#hourOfDay {
+    color: var(--text-color);
+   
+}  
+
 .description{
     white-space: pre-wrap;
 }
@@ -114,15 +121,45 @@ input:checked + .slider:before {
 .row {
     white-space: pre-wrap;
     height: 80px;
-    border-top: 1px solid;
-    border-color: var(--bg-color);
 }
   
 .hour {
+    position: relative;
     background-color: var(--bg-color);
     color: var(--heading-color);
     border-top: 1px dashed;
     border-color: var(--heading-color);
+    text-align: left;
+    width: 10%;
+    height:80px;
+}
+
+#hour5 {
+    border-bottom: 1px dashed;
+    border-color: var(--heading-color);
+}
+
+#userInput8, #userInput9, #userInput10, #userInput11, #userInput12, #userInput1, #userInput2, #userInput3, #userInput4 {
+  position: relative;
+  background-color: var(--bg-color);
+  color:var(--text-color);
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-color: var(--text-color);
+  width:80%;
+  height: 80px;
+}
+
+#userInput5 {
+    position: relative;
+    background-color: var(--bg-color);
+    color:var(--text-color);
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-color: var(--text-color);
+    width:80%;
+    height: 80px;
 }
   
 .past {
@@ -139,13 +176,33 @@ input:checked + .slider:before {
     background-color: #77dd77;
     color: white;
 }
-  
+
+#saveHour {
+    position: relative;
+    border:none;
+    background: white;
+    color: #000000;
+    text-align: right;
+    width:10%;
+    outline: none;
+    height:80px;
+}
+
 .saveBtn {
-    border-left: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #06AED5;
-    color: white;
+    position:absolute;
+    top: 0;
+    left: 0;
+    border-left: 1px solid;
+    border-color: var(--text-color);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color:var(--secondary-color);
+    background-size: 25px 25px;
+    height:100%;
+    width:100%;
+    color:var(--bg-color);
+    overflow: auto;
+    outline: none;
 }
   
 .saveBtn i:hover {
