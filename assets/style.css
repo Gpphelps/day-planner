@@ -32,6 +32,11 @@ textarea{
     text-align: left;
     outline: none;
 }
+
+/* added styling to the textarea on hover */
+textarea:hover {
+    cursor: pointer;
+}
   
 .jumbotron {
     text-align: center;
@@ -104,10 +109,6 @@ input:checked + .slider:before {
 }
   /* end styling for dark mode switch */
 
-#hourOfDay {
-    color: var(--text-color);
-   
-}  
 
 .description{
     white-space: pre-wrap;
@@ -139,7 +140,7 @@ input:checked + .slider:before {
     border-color: var(--heading-color);
 }
 
-#userInput8, #userInput9, #userInput10, #userInput11, #userInput12, #userInput1, #userInput2, #userInput3, #userInput4 {
+.userInput {
   position: relative;
   background-color: var(--bg-color);
   color:var(--text-color);
@@ -151,7 +152,7 @@ input:checked + .slider:before {
 }
 
 /* Had to create a seprate css styling because this element needs  bottom border */
-#userInput5 {
+.userInput5 {
     position: relative;
     background-color: var(--bg-color);
     color:var(--text-color);
@@ -180,8 +181,7 @@ input:checked + .slider:before {
 
 #saveHour {
     position: relative;
-    border:none;
-    background: var(--bg-color);
+    background:var(--secondary-color);
     color: #000000;
     text-align: right;
     width:10%;
@@ -193,7 +193,7 @@ input:checked + .slider:before {
     position:absolute;
     top: 0;
     left: 0;
-    border-left: 1px solid;
+    border: 2px solid;
     border-color: var(--text-color);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;

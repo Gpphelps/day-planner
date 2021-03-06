@@ -4,6 +4,10 @@ setInterval(function() {
     $("#currentDate").text(currentDay.format("dddd,  MMMM Mo, YYYY [at] hh:mm:ss a"));
 }, 1000);
 
+
+
+
+
 // Reference for DOM elements needed to change color of the userInput based upon time
 var calandarBlock8= $("#userInput8");
 var calandarBlock9= $("#userInput9");
@@ -16,9 +20,12 @@ var calandarBlock3= $("#userInput3");
 var calandarBlock4= $("#userInput4");
 var calandarBlock5= $("#userInput5");
 
-checkTime(function() {
+// Function to change clanadar blocks different colors
+// checkTime(function() {
 
-}, 1000);
+// }, 1000);
+
+
 
 
 
