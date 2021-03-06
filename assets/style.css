@@ -150,6 +150,7 @@ input:checked + .slider:before {
   height: 80px;
 }
 
+/* Had to create a seprate css styling because this element needs  bottom border */
 #userInput5 {
     position: relative;
     background-color: var(--bg-color);
@@ -180,7 +181,7 @@ input:checked + .slider:before {
 #saveHour {
     position: relative;
     border:none;
-    background: white;
+    background: var(--bg-color);
     color: #000000;
     text-align: right;
     width:10%;
