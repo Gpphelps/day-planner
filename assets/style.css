@@ -52,11 +52,11 @@ textarea:hover {
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
-  
-    em: {
-      margin-left: 10px;
-      font-size: 1rem;
-    }
+}
+
+em {
+    margin-left: 10px;
+    font-size: 1rem;
 }
   
 .theme-switch {
