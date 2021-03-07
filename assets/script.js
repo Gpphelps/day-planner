@@ -1,10 +1,31 @@
-// Retireves the current system time and date and sets the text element with the id=currentDay to be the current system time and date
+// This function runs everytime the page loads and is responsible for retrieving the user's input from local storage and displaying it to the proper textarea 
+$(document).ready(function () {
+    var keys = Object.keys(localStorage);
+    for (let i = 0; i < keys.length; i++) {
+        var value = localStorage.getItem(keys[i]);
+        var userAppiontment = $("#" + keys[i]).find("textarea");
+        userAppiontment.val(value);
+    }
+});
+
+// Retireves the current system time and date and sets the element with the id=currentDay to be the current system time and date
 setInterval(function() {
     var currentDay = moment(); 
     $("#currentDate").text(currentDay.format("dddd,  MMMM Mo, YYYY [at] hh:mm:ss a"));
 }, 1000);
 
+// jQuery functions that fires on a click of the save buttons that stores the user's input from the sibling text area to the value in local storage and the id of the parent row as the key value in local storage 
+$(".saveBtn").on("click", function () {
+    var value = $(this).siblings(".userInput").val();
+    var time = $(this).parent().attr("id");
+    localStorage.setItem(time, value);
+});
 
+$(".btn5").on("click", function () {
+    var value = $(this).siblings(".userInput5").val();
+    var time = $(this).parent().attr("id");
+    localStorage.setItem(time, value);
+});
 
 
 
@@ -53,4 +74,3 @@ function switchTheme(e) {
 }
 // Event listner for the dark mode/light mode toggle switch
 toggleSwitch.addEventListener('change', switchTheme, false);
-
