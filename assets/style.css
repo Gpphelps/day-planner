@@ -74,7 +74,7 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-  /* end styling for dark mode switch */
+/* end styling for dark mode switch */
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -83,8 +83,6 @@ body {
     background-color: var(--bg-color);
 }
 
-
-  
 textarea{
     width:100%;
     background: transparent;
@@ -95,7 +93,6 @@ textarea{
     text-align: left;
     outline: none;
 }
-
 /* added styling to the textarea on hover */
 textarea:hover {
     cursor: pointer;
@@ -119,6 +116,8 @@ textarea:hover {
   
 .hour {
     display: flex;
+    align-items: center;
+    padding-left: 5px;
     position: relative;
     color: black;
     border-top: 1px solid;
@@ -129,7 +128,8 @@ textarea:hover {
     border-color:var(--text-color);
     width: 10%;
     height:80px;
-    text-align: center ;
+    overflow:auto;
+    
 }
 
 #hour5 {
