@@ -6,12 +6,136 @@ $(document).ready(function () {
         var userAppiontment = $("#" + keys[i]).find("textarea");
         userAppiontment.val(value);
     }
+    
 });
 
-// Retireves the current system time and date and sets the element with the id=currentDay to be the current system time and date
+// Reference for DOM elements needed to change color of the userInput based upon time
+var calandarBlock8= $("#8am");
+var calandarBlock9= $("#9am");
+var calandarBlock10= $("#10am");
+var calandarBlock11= $("#11am");
+var calandarBlock12= $("#12pm");
+var calandarBlock1= $("#1pm");
+var calandarBlock2= $("#2pm");
+var calandarBlock3= $("#3pm");
+var calandarBlock4= $("#4pm");
+var calandarBlock5= $("#5pm");
+
+// Retireves the current system time and date and sets the element with the id=currentDay to be the current system time and date updates every second
 setInterval(function() {
     var currentDay = moment(); 
     $("#currentDate").text(currentDay.format("dddd,  MMMM Mo, YYYY [at] hh:mm:ss a"));
+
+    // if loop that checks to see what hour it currently is in military (24 hour) time and adds a class to the timeblock depending on whether the given time block is after, during, or before the current hour. The values for "H" can be 0-24.
+    if ((moment().format("H")) > 8 ) {
+        $(calandarBlock8).addClass("past");
+    } 
+    if ((moment().format("H")) == 8) {
+        $(calandarBlock8).addClass("present");
+    } 
+    if ((moment().format("H")) < 8) {
+        $(calandarBlock8).addClass("future");
+    }
+
+    if ((moment().format("H")) > 9 ) {
+        $(calandarBlock9).addClass("past");
+    } 
+    if ((moment().format("H")) == 9) {
+        $(calandarBlock9).addClass("present");
+    } 
+    if ((moment().format("H")) < 9) {
+        $(calandarBlock9).addClass("future");
+    }
+
+    if ((moment().format("H")) > 10 ) {
+        $(calandarBlock10).addClass("past");
+    } 
+    if ((moment().format("H")) == 10) {
+        $(calandarBlock10).addClass("present");
+    } 
+    if ((moment().format("H")) < 10) {
+        $(calandarBlock10).addClass("future");
+    }
+
+    if ((moment().format("H")) > 11 ) {
+        $(calandarBlock11).addClass("past");
+    } 
+    if ((moment().format("H")) == 11) {
+        $(calandarBlock11).addClass("present");
+    } 
+    if ((moment().format("H")) < 11) {
+        $(calandarBlock11).addClass("future");
+    }
+
+    if ((moment().format("H")) > 12 ) {
+        $(calandarBlock12).addClass("past");
+    } 
+    if ((moment().format("H")) == 12) {
+        $(calandarBlock12).addClass("present");
+    } 
+    if ((moment().format("H")) < 12) {
+        $(calandarBlock12).addClass("future");
+    }
+
+    if ((moment().format("H")) > 13 ) {
+        $(calandarBlock1).addClass("past");
+    } 
+    if ((moment().format("H")) == 13) {
+        $(calandarBlock1).addClass("present");
+    } 
+    if ((moment().format("H")) < 13) {
+        $(calandarBlock1).addClass("future");
+    }
+
+    if ((moment().format("H")) > 14 ) {
+        $(calandarBlock2).addClass("past");
+    } 
+    if ((moment().format("H")) == 14) {
+        $(calandarBlock2).addClass("present");
+    } 
+    if ((moment().format("H")) < 14) {
+        $(calandarBlock2).addClass("future");
+    }
+
+    if ((moment().format("H")) > 15 ) {
+        $(calandarBlock3).addClass("past");
+    } 
+    if ((moment().format("H")) == 15) {
+        $(calandarBlock3).addClass("present");
+    } 
+    if ((moment().format("H")) < 15) {
+        $(calandarBlock3).addClass("future");
+    }
+
+    if ((moment().format("H")) > 16 ) {
+        $(calandarBlock4).addClass("past");
+    } 
+    if ((moment().format("H")) == 16) {
+        $(calandarBlock4).addClass("present");
+    } 
+    if ((moment().format("H")) < 16) {
+        $(calandarBlock4).addClass("future");
+    }
+
+    if ((moment().format("H")) > 16 ) {
+        $(calandarBlock4).addClass("past");
+    } 
+    if ((moment().format("H")) == 16) {
+        $(calandarBlock4).addClass("present");
+    } 
+    if ((moment().format("H")) < 16) {
+        $(calandarBlock4).addClass("future");
+    }
+
+    if ((moment().format("H")) > 17 ) {
+        $(calandarBlock5).addClass("past");
+    } 
+    if ((moment().format("H")) == 17) {
+        $(calandarBlock5).addClass("present");
+    } 
+    if ((moment().format("H")) < 17) {
+        $(calandarBlock5).addClass("future");
+    }
 }, 1000);
 
 // jQuery functions that fires on a click of the save buttons that stores the user's input from the sibling text area to the value in local storage and the id of the parent row as the key value in local storage 
@@ -26,37 +150,6 @@ $(".btn5").on("click", function () {
     var time = $(this).parent().attr("id");
     localStorage.setItem(time, value);
 });
-
-
-
-// Reference for DOM elements needed to change color of the userInput based upon time
-var calandarBlock8= $("#userInput8");
-var calandarBlock9= $("#userInput9");
-var calandarBlock10= $("#userInput10");
-var calandarBlock11= $("#userInput11");
-var calandarBlock12= $("#userInput12");
-var calandarBlock1= $("#userInput1");
-var calandarBlock2= $("#userInput2");
-var calandarBlock3= $("#userInput3");
-var calandarBlock4= $("#userInput4");
-var calandarBlock5= $("#userInput5");
-
-// Function to change clanadar blocks different colors
-// checkTime(function() {
-
-// }, 1000);
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Constant for the dark mode/light mode switch
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
@@ -74,3 +167,5 @@ function switchTheme(e) {
 }
 // Event listner for the dark mode/light mode toggle switch
 toggleSwitch.addEventListener('change', switchTheme, false);
+
+    
