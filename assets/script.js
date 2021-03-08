@@ -1,4 +1,4 @@
-// This function runs everytime the page loads and is responsible for retrieving the user's input from local storage and displaying it to the proper textarea 
+// jQuery function runs everytime the page loads and is responsible for retrieving the user's input from local storage and displaying it to the proper textarea 
 $(document).ready(function () {
     var keys = Object.keys(localStorage);
     for (let i = 0; i < keys.length; i++) {
